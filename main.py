@@ -17,4 +17,11 @@ for quote in main.find_all('div', class_ = 'quote'):
     quotes = quote.find('span', class_ = 'text').text
     print(quotes)
 
+    writer = quote.find('small', class_ = 'author').text
+    print(writer)
+
+    tags = quote.find('a',class_ = 'tag').text
+    print(tags)
+    
+
 
