@@ -4,12 +4,17 @@ import requests
 url = requests.get('https://quotes.toscrape.com/').text
 soup = BeautifulSoup(url, 'lxml')
 
-content = soup.find('div', class_ = 'container')
+main = soup.find('div', class_ = 'container')
 
-#extracting the main heading
-heading = content.find('div', class_ = 'col-md-8')
-print(heading.text)
+ #extracting the main heading
+heading = main.find('div', class_ = 'col-md-8').text.strip()
+print(heading)
 
-#extracting the quotes of a webpage
-quotes = content.find()
+for quote in main.find_all('div', class_ = 'quote'):
+
+
+    #extracting the quotes of a webpage
+    quotes = quote.find('span', class_ = 'text').text
+    print(quotes)
+
 
