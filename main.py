@@ -5,7 +5,7 @@ import csv
 url = requests.get('https://quotes.toscrape.com/').text
 soup = BeautifulSoup(url, 'lxml')
 
-
+#main content
 main = soup.find('div', class_ = 'container')
 
  #extracting the main heading
